@@ -8,10 +8,9 @@ API_TOKEN = '##############'    #bot api
 
 bot = telebot.TeleBot(API_TOKEN)
 
-users = [1111, 22222, 33333, 44444, -555555]    #users id для небольшой защиты...
+users = [1111, 22222, 33333, 44444, -555555]    #telegram users id для небольшой защиты...
 
 
-channel_id = -123456789     #chat id
 urlKek = "https://www.anekdot.ru/random/anekdot/"
 header = {
     "user-agent": "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/27.0.1453.90 Safari/537.36"
@@ -41,7 +40,7 @@ def get_text(message):
     match message.text:
         case "Сходка🎉":
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("Адрес", url="???????????")) #метка геолокации
+            markup.add(types.InlineKeyboardButton("Адрес", url="???????????")) #метка геолокации (пример: https://yandex.ru/maps/-/CCUSRVTyTC)
             bot.send_message(message.chat.id, f'<b>ДАТА:</b>\n <b>??????????????????', reply_markup=markup, parse_mode='html') #дата проведения мероприятия....
 
         case "Участники🧑‍🤝‍🧑":
@@ -51,7 +50,7 @@ def get_text(message):
             bot.send_message(message.chat.id, f'<b>Телефон для перевода:</b>', parse_mode='html')
             bot.send_message(message.chat.id, f'???????', parse_mode='html') #телефон
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("Оплатить", url="???????")) #ссылочка на донатики(киви)
+            markup.add(types.InlineKeyboardButton("Оплатить", url="???????")) #ссылочка на донатики(пример: киви)
             bot.send_message(message.chat.id, f'(Альфа-банк, Сбер, Tinkoff)', reply_markup=markup, parse_mode='html')
 
         case "За деньги да🤑":
