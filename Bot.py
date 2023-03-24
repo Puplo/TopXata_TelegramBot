@@ -40,8 +40,8 @@ def get_text(message):
     match message.text:
         case "Сходка🎉":
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("Адрес", url="???????????")) #метка геолокации (пример: https://yandex.ru/maps/-/CCUSRVTyTC)
-            bot.send_message(message.chat.id, f'<b>ДАТА:</b>\n <b>??????????????????', reply_markup=markup, parse_mode='html') #дата проведения мероприятия....
+            markup.add(types.InlineKeyboardButton("Адрес", url="https://yandex.ru/maps/-/CCUSRVTyTC"))
+            bot.send_message(message.chat.id, f'<b>ДАТА:</b>\n <b>??.??.?? (день недели)</b>\n по адресу ул.????? в ??:?? по мск', reply_markup=markup, parse_mode='html')
 
         case "Участники🧑‍🤝‍🧑":
             bot.send_message(message.chat.id,f'<b>СПИСОК УЧАСТНИКОВ</b>\n\n 1. ????????\n 2. ???????\n 3. ???????\n <b>4. ???????</b>\n 5. ???????\n 6. ???????\n 7. ???????\n 8. ???????',parse_mode='html') #братики
@@ -50,7 +50,7 @@ def get_text(message):
             bot.send_message(message.chat.id, f'<b>Телефон для перевода:</b>', parse_mode='html')
             bot.send_message(message.chat.id, f'???????', parse_mode='html') #телефон
             markup = types.InlineKeyboardMarkup()
-            markup.add(types.InlineKeyboardButton("Оплатить", url="???????")) #ссылочка на донатики(пример: киви)
+            markup.add(types.InlineKeyboardButton("Оплатить", url="https://qiwi.com/")) #ссылочка на донатики(пример: киви)
             bot.send_message(message.chat.id, f'(Альфа-банк, Сбер, Tinkoff)', reply_markup=markup, parse_mode='html')
 
         case "За деньги да🤑":
